@@ -1,0 +1,11 @@
+# No vim save file :
+*~
+*.swp
+.*.swp
+
+# No backup file of any sort :
+*.bak
+*.save
+*.orig
+*.bkp
+*.old
