@@ -1,0 +1,23 @@
+# /usr/pkg/etc/bashrc
+
+# System wide functions and aliases
+# Environment stuff goes in /etc/profile
+
+# It's NOT a good idea to change this file unless you know what you
+# are doing. It's much better to create a custom.sh shell script in
+# /usr/pkg/etc/profile.d/ to make custom changes to your environment, as this
+# will prevent the need for merging in future updates.
+
+# Only display echos from profile.d scripts if we are no login shell
+# and interactive - otherwise just process them to set envvars
+    for i in /usr/pkg/etc/profile.d/*.sh; do
+        if [ -r "$i" ]; then
+            if [ "$PS1" ]; then
+                . "$i"
+            else
+                . "$i" >/dev/null 2>&1
+            fi
+        fi
+    done
+
+# vim:ts=4:sw=4
