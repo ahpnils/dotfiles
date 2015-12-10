@@ -16,19 +16,19 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-# ls aliases are already available 
-# in Red Hat clones and colorized 
+# ls aliases are already available
+# in Red Hat clones and colorized
 if [ "$(uname -s)" == "NetBSD" ]; then
 	alias ls='ls -hlF'
 	alias ll='ls -hlF'
 	alias l='ls'
 fi
 
-if [ ! -z "$(which vim)" ]; then
+if $(which vim > /dev/null 2>&1); then
 	alias vi='vim'
 	export EDITOR=$(which vim)
 fi
 
-if [ ! -z "$(which most )" ]; then
+if $(which most > /dev/null 2>&1); then
 	export PAGER=$(which most)
 fi
