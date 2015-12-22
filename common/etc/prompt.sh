@@ -32,3 +32,6 @@ fi
 if $(which most > /dev/null 2>&1); then
 	export PAGER=$(which most)
 fi
+
+# Set umask so users don't see each other's data
+umask 0077
