@@ -1,5 +1,21 @@
 " Nils vimrc file, based on an example for a vimrc file.
-"
+
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+" let Vundle manage Vundle, required
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'vim-scripts/nginx.vim'
+"Plugin 'rust-lang/rust.vim'
+"Plugin 'chase/vim-ansible-yaml'
+"Plugin 'hashivim/vim-terraform'
+"Plugin 'cometsong/ferm.vim'
+"Plugin 'fgsch/vim-varnish'
+"Plugin 'saltstack/salt-vim'
+"Plugin 'gabrielelana/vim-markdown'
+
+" All of your Plugins must be added before the following line
+"call vundle#end()            " required
+
 " Maintainer:   Nils Ratusznik <nils.github@anotherhomepage.org>
 " Last change:  2015 Nov 13
 "
@@ -86,11 +102,77 @@ set bg=dark
 set number
 set encoding=utf-8
 set fileencoding=utf-8
-set tabstop=8
-set shiftwidth=8
-au BufNewFile,BufRead /usr/pkg/etc/httpd/vhosts.d/*	set filetype=apache
-au BufNewFile,BufRead /usr/pkg/etc/httpd/conf.d/*	set filetype=apache
-au BufNewFile,BufRead /usr/pkg/etc/httpd/*.conf		set filetype=apache
-au BufNewFile,BufRead ~/.ssh/config			setf sshconfig
-au Filetype python setl et ts=4 sw=4
+scriptencoding utf8
+set shell=/bin/bash
+set laststatus=2
+set colorcolumn=81
+"set fillchars+=vert:|
+set splitright
+set splitbelow
+"set tabstop=8
+"set shiftwidth=8
+"au BufNewFile,BufRead /usr/pkg/etc/httpd/vhosts.d/*	set filetype=apache
+"au BufNewFile,BufRead /usr/pkg/etc/httpd/conf.d/*	set filetype=apache
+"au BufNewFile,BufRead /usr/pkg/etc/httpd/*.conf		set filetype=apache
+"au BufNewFile,BufRead ~/.ssh/config			setf sshconfig
+"au Filetype python setl et ts=4 sw=4
+
+" FILEFORMAT
+autocmd FileType gitcommit setlocal textwidth=79 spell colorcolumn=50
+autocmd FileType go setlocal colorcolumn=
+autocmd FileType text,markdown setlocal textwidth=79
+autocmd FileType make setlocal noexpandtab  " No tabexpand for makefiles
+autocmd Filetype ruby set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd BufReadPre *.nfo set encoding=cp437     " Awesome nfo viewer
+autocmd BufNewFile,BufReadPost *.md,*.markdown,*.mdwn set spell
+autocmd BufNewFile,BufReadPost *.phpt set filetype=php
+autocmd BufNewFile,BufReadPost *.rst set spell
+autocmd BufNewFile,BufReadPost *.zone set filetype=bindzone
+autocmd BufnewFile,BufReadPost *.sage set filetype=python
+
+" SPECIFIC STUFFS
+let hs_highlight_boolean = 1            " Highlight boolean in haskell
+let hs_highlight_debug = 1                      " Highlight debug in Haskell
+let hs_highlight_delimiters = 1 " Highlight delimiters in Haskell
+let hs_highlight_types = 1                      " Highlight types in Haskell
+let hs_highlight_more_types = 1 " Highlight every types in haskell
+let msql_sql_query = 1                                  " Better mysql highlight
+let ruby_operators = 1          " Highlight operatos
+let g:tex_fold_enabled=1        " fold on chapters/parts/sections/...
+let python_highlight_all = 1            " Better python highlight
+let asmsyntax="nasm"            " tasm syntax for asm
+let c_comment_strings=1         " strings and numbers in comments
+let c_gnu=1                     " dealing with ugly code
+let c_ansi_typedefs=1           " ansi \o/
+let c_ansi_constants=1          " ansi \o/
+let c_syntax_for_h=1            " .h are C
+let php_htmlInStrings = 1                               " Highlight HTML in php strings
+let php_sql_query = 1                                           " Highligh SQL in PHP
+
+set statusline=
+set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
+set statusline+=%#Search#%{(mode()=='i')?'\ \ INSERT\ ':''}
+set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
+set statusline+=%#DiffChange#%{(mode()=='v')?'\ \ VISUAL\ ':''}
+set statusline+=%#Cursor#        " colour
+set statusline+=\ %n\            " buffer number
+set statusline+=%#Visual#        " colour
+set statusline+=%{&paste?'\ PASTE\ ':''}
+set statusline+=%{&spell?'\ SPELL\ ':''}
+set statusline+=%#CursorIM#      " colour
+set statusline+=%w                                                 " preview flag
+set statusline+=%h                                                 " help flag
+set statusline+=%r                                                 " readonly flag
+set statusline+=%m                                                 " modified [+] flag
+set statusline+=%#Cursor#                                " colour
+set statusline+=%#CursorLine#      " colour
+set statusline+=\ %t\                                    " short file name
+set statusline+=%=                                                       " right align
+set statusline+=%#CursorLine#    " colour
+set statusline+=\ %{&filetype}\  " file type (%Y and %y are too ugly)
+set statusline+=%#CursorIM#      " colour
+set statusline+=\ %3l:%-2c\              " line + column
+set statusline+=%#Cursor#        " colour
+set statusline+=\ %3p%%\                                 " percentage
+
 
