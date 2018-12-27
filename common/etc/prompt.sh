@@ -18,20 +18,27 @@ alias mv='mv -i'
 
 # ls aliases are already available
 # in Red Hat clones and colorized
-if [ "$(uname -s)" == "NetBSD" ]; then
+if [ "$(uname -s)" == "NetBSD" ] || [ -f "/etc/alpine-release" ]; then
 	alias ls='ls -hlF'
 	alias ll='ls -hlF'
 	alias l='ls'
 fi
 
-if $(which vim > /dev/null 2>&1); then
+if command -v vim > /dev/null 2>&1 ; then
 	alias vi='vim'
-	export EDITOR=$(which vim)
+	EDITOR=$(command -v vim)
+	export EDITOR
 fi
 
-if $(which most > /dev/null 2>&1); then
-	export PAGER=$(which most)
+if command -v most > /dev/null 2>&1 ; then
+	PAGER=$(command -v most)
+	export PAGER
 fi
 
 # Set umask so users don't see each other's data
-umask 0077
+# Except on NetBSD, because it messes with pkgsrc
+if [ "$(uname -s)" != "NetBSD" ]; then
+	umask 0077
+fi
+
+# vim:ts=4:sw=4
