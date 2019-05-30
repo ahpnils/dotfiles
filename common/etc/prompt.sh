@@ -10,17 +10,17 @@ fi
 # Add dates in bash_history :
 export HISTTIMEFORMAT="%d/%m/%y %T "
 # Remove duplicate commands in history
-export HISTCONTROL=ignoredups:erasedups
+#export HISTCONTROL=ignoredups:erasedups
 # Unlimited bash history :
-export HISTFILESIZE=
-export HISTSIZE=
+#export HISTFILESIZE=
+#export HISTSIZE=
 # Change history file location because certain bash sessions truncate
 # .bash_history file upon close
-export HISTFILE=~/.bash_eternal_history
+#export HISTFILE=~/.bash_eternal_history
 # Force prompt to write history after every command
 # PROMPT_COMMAND="history -a; ${PROMPT_COMMAND}"
 # After each command, append to history file and reread
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+#export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
@@ -36,16 +36,26 @@ alias lsd='ls -d */'
 
 # ls aliases are already available
 # in Red Hat clones and colorized
-if [ "$(uname -s)" == "NetBSD" ] || [ -f "/etc/alpine-release" ]; then
+# in Alpine colors are available
+# but not enabled
+if [ -f "/etc/alpine-release" ]; then
 	alias ls='ls -hlF --color=auto'
 	alias ll='ls -hlF --color=auto'
 	alias l='ls --color=auto'
 	alias l.='ls -d .* --color=auto'
-	alias egrep='egrep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias grep='grep --color=auto'
-	alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 fi
+# no colored ls in NetBSD
+if [ "$(uname -s)" == "NetBSD" ]; then
+	alias ls='ls -hlF'
+	alias ll='ls -hlF'
+	alias l='ls'
+	alias l.='ls -d .*'
+fi
+# Every OS can grep with colors
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
 if command -v vim > /dev/null 2>&1 ; then
 	alias vi='vim'
