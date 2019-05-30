@@ -25,3 +25,5 @@ alp-install:
 	cp -fp common/etc/prompt.sh /etc/profile.d/prompt.sh ; chmod 0755 /etc/profile.d/prompt.sh
 	cp -fp common/home/.vimrc /etc/vim/vimrc
 
+alp-packages:
+	apk add python3 bash-completion git tmux vim
