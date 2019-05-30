@@ -129,6 +129,9 @@ autocmd BufNewFile,BufReadPost *.phpt set filetype=php
 autocmd BufNewFile,BufReadPost *.rst set spell
 autocmd BufNewFile,BufReadPost *.zone set filetype=bindzone
 autocmd BufnewFile,BufReadPost *.sage set filetype=python
+" Download cisco.vim from https://github.com/momota/cisco.vim/tree/master/syntax
+" and place it in your syntax folder
+autocmd BufNewFile,BufReadPost *.cisco set filetype=cisco
 
 " SPECIFIC STUFFS
 let hs_highlight_boolean = 1            " Highlight boolean in haskell
