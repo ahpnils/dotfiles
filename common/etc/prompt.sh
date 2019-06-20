@@ -51,11 +51,11 @@ if [ "$(uname -s)" == "NetBSD" ]; then
 	alias l='ls'
 	alias l.='ls -d .*'
 fi
+
 # Every OS can grep with colors
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
 if command -v vim > /dev/null 2>&1 ; then
 	alias vi='vim'
