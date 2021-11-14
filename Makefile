@@ -1,5 +1,6 @@
 clean:
 	rm -f *~ .*~
+	rm -f */*~ */.*~
 
 install:
 	ln -snvf ${PWD}/bash/.bashrc ~/.bashrc
