@@ -14,10 +14,23 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
-
+# Custom aliases
 alias startstream='cowsay -f blowfish "le stream va bientôt commencer"'
 alias endstream='cowsay -f blowfish "le stream est finiiiiii"'
 alias coucou='cowsay -f blowfish "coucou"'
 alias nvtop='/home/nils/Projects/nvtop/build/src/nvtop'
+alias c='clear'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ls='ls -hlF --color=auto'
+alias ll='ls -hlF --color=auto'
+alias l='ls --color=auto'
+alias rpmqd='rpm -qd'
 
-complete -C /usr/bin/terraform terraform
+# Custom functions
+# thanks eseyman !
+function mkcd() { mkdir "${1}" && cd "${1}"; }
+function mani() { info $1 --subnodes --output - | less; }
+
+
