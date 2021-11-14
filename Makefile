@@ -2,5 +2,5 @@ clean:
 	rm -f *~ .*~
 
 install:
-	ln -snvf ./bash/.bashrc ~/.bashrc
-	ln -snvf ./bash/.bash_profile ~/.bash_profile
+	ln -snvf ${PWD}/bash/.bashrc ~/.bashrc
+	ln -snvf ${PWD}/bash/.bash_profile ~/.bash_profile
