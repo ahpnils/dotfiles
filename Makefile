@@ -7,6 +7,7 @@ install:
 	ln -snvf ${PWD}/bash/.bash_profile ~/.bash_profile
 	ln -snvf ${PWD}/vim/.vimrc ~/.vimrc
 	ln -snvf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+	ln -snvf ${PWD}/git/.gitconfig ~/.gitconfig
 
 
 rpm-deps:
