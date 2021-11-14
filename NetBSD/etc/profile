@@ -1,8 +1,0 @@
-# System-wide .profile file for sh(1).
-if [ -n "$BASH" ]; then
-                 [ -r /usr/pkg/etc/bashrc ] && . /usr/pkg/etc/bashrc
-fi
-
-TMOUT=900
-readonly TMOUT
-export TMOUT
