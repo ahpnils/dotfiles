@@ -27,6 +27,7 @@ alias ls='ls -hlF --color=auto'
 alias ll='ls -hlF --color=auto'
 alias l='ls --color=auto'
 alias rpmqd='rpm -qd'
+alias tree='tree -a -I .git'
 
 # Custom functions
 # thanks eseyman !
