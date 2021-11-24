@@ -1,3 +1,24 @@
 [user]
-	email = nils.ratusznik
 	name = Nils Ratusznik
+[push]
+	default = simple
+[alias]
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%Cred%d%Creset %s %Cgreen(%an %ad)%Creset'
+	adog = log --all --decorate --oneline --graph
+	co = checkout
+	st = status
+	ci = commit
+[core]
+	editor = vim
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	syntax-theme = Sublime Snazzy
+	navigate = true
+	line-numbers = true
+[interactive]
+	diffFilter = delta --color-only
+# vim:ts=4:sw=4
