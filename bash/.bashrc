@@ -47,3 +47,5 @@ function mani() { info $1 --subnodes --output - | less; }
 lesslog() { ccze -A < $1 | less -R; }
 
 complete -C /usr/bin/terraform terraform
+
+# vim:ts=4:sw=4

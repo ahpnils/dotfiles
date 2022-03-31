@@ -21,4 +21,5 @@
 	line-numbers = true
 [interactive]
 	diffFilter = delta --color-only
+
 # vim:ts=4:sw=4
