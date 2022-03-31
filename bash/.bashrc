@@ -32,6 +32,10 @@ if $(which bat > /dev/null 2>&1); then
 	alias cat='bat -pp'
 fi
 
+if $(which shellcheck > /dev/null 2>&1); then
+	alias shellcheck='shellcheck -x'
+fi
+
 # Custom functions
 # thanks eseyman !
 function mkcd() { mkdir "${1}" && cd "${1}"; }
