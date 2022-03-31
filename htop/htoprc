@@ -1,10 +1,10 @@
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
-htop_version=3.1.1
+htop_version=3.1.2
 config_reader_min_version=2
 fields=0 17 18 48 49 39 113 109 110 46 47 2 1
 sort_key=46
-sort_direction=1
+sort_direction=-1
 tree_sort_key=0
 tree_sort_direction=1
 hide_kernel_threads=1
