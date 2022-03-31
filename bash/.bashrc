@@ -28,6 +28,9 @@ alias ll='ls -hlF --color=auto'
 alias l='ls --color=auto'
 alias rpmqd='rpm -qd'
 alias tree='tree -a -I .git'
+if $(which bat > /dev/null 2>&1); then
+	alias cat='bat -pp'
+fi
 
 # Custom functions
 # thanks eseyman !
