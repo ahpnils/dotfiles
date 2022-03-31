@@ -13,4 +13,5 @@ install:
 
 
 rpm-deps:
-	sudo dnf -y install ccze vim-enhanced most htop git-delta bat shellcheck
+	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
+		ShellCheck
