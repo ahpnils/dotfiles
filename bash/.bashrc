@@ -38,3 +38,4 @@ function mkcd() { mkdir "${1}" && cd "${1}"; }
 function mani() { info $1 --subnodes --output - | less; }
 lesslog() { ccze -A < $1 | less -R; }
 
+complete -C /usr/bin/terraform terraform
