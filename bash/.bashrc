@@ -18,7 +18,7 @@ fi
 alias startstream='cowsay -f blowfish "le stream va bientôt commencer"'
 alias endstream='cowsay -f blowfish "le stream est finiiiiii"'
 alias coucou='cowsay -f blowfish "coucou"'
-alias nvtop='/home/nils/Projects/nvtop/build/src/nvtop'
+alias nvtop='/home/nils/Documents/Projects/git/github/others/nvtop/build/src/nvtop'
 alias c='clear'
 alias rm='rm -i'
 alias cp='cp -i'
