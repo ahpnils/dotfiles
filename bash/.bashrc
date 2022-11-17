@@ -33,7 +33,9 @@ else
 	alias l='ls --color=auto'
 fi
 alias rpmqd='rpm -qd'
-alias tree='tree -a -I .git'
+if $(which tree > /dev/null 2>&1); then
+	alias tree='tree -a -I .git'
+fi
 if $(which bat > /dev/null 2>&1); then
 	alias cat='bat -pp'
 fi
