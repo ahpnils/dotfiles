@@ -23,13 +23,15 @@ alias c='clear'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ls='ls -hlF --color=auto'
 if $(which exa > /dev/null 2>&1); then
 	alias ll='exa -G -l --color=always'
+	alias ls='exa -G -l --color=always'
+	alias l='exa --color=always'
 else
 	alias ll='ls -hlF --color=auto'
+	alias ls='ls -hlF --color=auto'
+	alias l='ls --color=auto'
 fi
-alias l='ls --color=auto'
 alias rpmqd='rpm -qd'
 alias tree='tree -a -I .git'
 if $(which bat > /dev/null 2>&1); then
