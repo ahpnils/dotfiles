@@ -48,4 +48,8 @@ lesslog() { ccze -A < $1 | less -R; }
 
 complete -C /usr/bin/terraform terraform
 
+# Source custom local aliases and functions
+if [ -f ~/.bashrc.local ]; then
+	source ~/.bashrc.local
+fi
 # vim:ts=4:sw=4
