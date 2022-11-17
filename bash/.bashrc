@@ -32,7 +32,9 @@ else
 	alias ls='ls -hlF --color=auto'
 	alias l='ls --color=auto'
 fi
-alias rpmqd='rpm -qd'
+if $(which rpm > /dev/null 2>&1); then
+	alias rpmqd='rpm -qd'
+fi
 if $(which tree > /dev/null 2>&1); then
 	alias tree='tree -a -I .git'
 fi
