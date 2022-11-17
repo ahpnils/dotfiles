@@ -15,3 +15,11 @@ install:
 rpm-deps:
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
 		ShellCheck exa
+
+pkgin-deps:
+	# the following softwares are not available at the moment :
+	# ccze, shellcheck
+	# on macOS, vim and git are available out of the box, 
+	# but sometimes in older releases
+	sudo pkgin -y install vim most htop git-base git-delta bat \
+		exa bash-completion
