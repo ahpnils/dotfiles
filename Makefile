@@ -22,4 +22,4 @@ pkgin-deps:
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
-		exa bash-completion tree
+		exa bash-completion tree xz
