@@ -60,7 +60,7 @@ if $(which shellcheck > /dev/null 2>&1); then
 fi
 
 # Custom functions
-function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
+#function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
 # thanks eseyman !
 function mkcd() { mkdir "${1}" && cd "${1}"; }
 function mani() { info $1 --subnodes --output - | less; }
