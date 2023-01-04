@@ -8,7 +8,7 @@ install:
 	ln -snvf ${PWD}/vim/.vimrc ~/.vimrc
 	ln -snvf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 	ln -snvf ${PWD}/git/.gitconfig ~/.gitconfig
-	mkdir -vp ${HOME}/.config/htop/
+	mkdir -p ${HOME}/.config/htop/
 	ln -snvf ${PWD}/htop/htoprc ~/.config/htop/htoprc
 
 
