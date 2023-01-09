@@ -12,6 +12,7 @@
 	ci = commit
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [pager]
 	diff = delta
 	log = delta
