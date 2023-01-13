@@ -1,20 +1,21 @@
 " Nils vimrc file, based on an example for a vimrc file.
 
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 "Plugin 'vim-scripts/nginx.vim'
 "Plugin 'rust-lang/rust.vim'
 "Plugin 'chase/vim-ansible-yaml'
-"Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-terraform'
 "Plugin 'cometsong/ferm.vim'
 "Plugin 'fgsch/vim-varnish'
 "Plugin 'saltstack/salt-vim'
 "Plugin 'gabrielelana/vim-markdown'
 
 " All of your Plugins must be added before the following line
-"call vundle#end()            " required
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Maintainer:   Nils Ratusznik <nils.github@anotherhomepage.org>
 " When started as "evim", evim.vim will already have done these settings.
