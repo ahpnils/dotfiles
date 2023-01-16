@@ -7,9 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
-
-export PATH
+export PATH=$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin
 
 if [ "$UID" -eq 0 ] ; then
         PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;31m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;31m\]\$\[\E[0m\] '
