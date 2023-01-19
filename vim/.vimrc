@@ -108,6 +108,7 @@ set splitbelow
 "au BufNewFile,BufRead /usr/pkg/etc/httpd/conf.d/*	set filetype=apache
 "au BufNewFile,BufRead /usr/pkg/etc/httpd/*.conf		set filetype=apache
 "au BufNewFile,BufRead ~/.ssh/config			setf sshconfig
+autocmd BufNewFile,BufRead *.service* set ft=systemd
 "au Filetype python setl et ts=4 sw=4
 
 " FILEFORMAT
