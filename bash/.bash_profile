@@ -9,10 +9,14 @@ fi
 
 export PATH=$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin
 
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 if [ "$UID" -eq 0 ] ; then
         PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;31m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;31m\]\$\[\E[0m\] '
 else
-        PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;32m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;32m\]\$\[\E[0m\] '
+        PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;32m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;32m\]$(parse_git_branch)\[\033[00m\] \$\[\E[0m\] '
 fi
 
 # Add dates in bash_history :
