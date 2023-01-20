@@ -1,8 +1,13 @@
 # .bashrc
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
+if [ -r /etc/bashrc ]; then
 	. /etc/bashrc
+fi
+
+# Source custom local aliases and functions
+if [ -r ~/.bashrc.local ]; then
+	source ~/.bashrc.local
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -68,8 +73,4 @@ lesslog() { ccze -A < $1 | less -R; }
 
 complete -C /usr/bin/terraform terraform
 
-# Source custom local aliases and functions
-if [ -f ~/.bashrc.local ]; then
-	source ~/.bashrc.local
-fi
 # vim:ts=4:sw=4
