@@ -104,6 +104,9 @@ set splitright
 set splitbelow
 "set tabstop=8
 "set shiftwidth=8
+"with the following config line you don't need to `vim -p` anymore
+"credits : https://stackoverflow.com/questions/34822816/vim-always-use-tabbed-pages
+au VimEnter * if !&diff | tab all | tabfirst | endif
 "au BufNewFile,BufRead /usr/pkg/etc/httpd/vhosts.d/*	set filetype=apache
 "au BufNewFile,BufRead /usr/pkg/etc/httpd/conf.d/*	set filetype=apache
 "au BufNewFile,BufRead /usr/pkg/etc/httpd/*.conf		set filetype=apache
