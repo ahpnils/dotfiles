@@ -174,5 +174,5 @@ set statusline+=%#CursorIM#      " colour
 set statusline+=\ %3l:%-2c\              " line + column
 set statusline+=%#Cursor#        " colour
 set statusline+=\ %3p%%\                                 " percentage
-
+set statusline+=%F               "prints full path and full name of current file 
 
