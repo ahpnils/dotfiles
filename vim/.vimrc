@@ -166,7 +166,7 @@ set statusline+=%r                                                 " readonly fl
 set statusline+=%m                                                 " modified [+] flag
 set statusline+=%#Cursor#                                " colour
 set statusline+=%#CursorLine#      " colour
-set statusline+=\ %t\                                    " short file name
+set statusline+=\ %f\              " file name and relative path
 set statusline+=%=                                                       " right align
 set statusline+=%#CursorLine#    " colour
 set statusline+=\ %{&filetype}\  " file type (%Y and %y are too ugly)
@@ -174,5 +174,4 @@ set statusline+=%#CursorIM#      " colour
 set statusline+=\ %3l:%-2c\              " line + column
 set statusline+=%#Cursor#        " colour
 set statusline+=\ %3p%%\                                 " percentage
-set statusline+=%F               "prints full path and full name of current file 
 
