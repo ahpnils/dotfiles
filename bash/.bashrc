@@ -20,10 +20,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # Custom aliases
-alias startstream='cowsay -f blowfish "le stream va bientôt commencer"'
-alias endstream='cowsay -f blowfish "le stream est finiiiiii"'
-alias coucou='cowsay -f blowfish "coucou"'
-alias nvtop='/home/nils/Documents/Projects/git/github/others/nvtop/build/src/nvtop'
 alias c='clear'
 alias rm='rm -i'
 alias cp='cp -i'
