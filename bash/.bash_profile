@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-export PATH=$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin
+export PATH=/bin:/sbin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin
 
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
