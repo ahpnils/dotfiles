@@ -10,6 +10,7 @@
 	co = checkout
 	st = status
 	ci = commit
+	sw = switch
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
@@ -24,5 +25,8 @@
 	line-numbers = true
 [interactive]
 	diffFilter = delta --color-only
+
+[merge]
+	conflictstyle = diff3
 
 # vim:ts=4:sw=4
