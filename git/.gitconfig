@@ -5,12 +5,20 @@
 [push]
 	default = simple
 [alias]
+	# Display tree-like log, and is more compact than the default log
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%Cred%d%Creset %s %Cgreen(%an %ad)%Creset'
 	adog = log --all --decorate --oneline --graph
 	co = checkout
 	st = status
 	ci = commit
 	sw = switch
+	# Useful when you have to update your last commit
+    # with staged files without editing the commit message.
+	oops = commit --amend --no-edit
+	# Edit last commit message
+	reword = commit --amend
+	# Undo last commit but keep changed files in stage
+	uncommit = reset --soft HEAD~1
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
