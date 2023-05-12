@@ -33,7 +33,6 @@
 	line-numbers = true
 [interactive]
 	diffFilter = delta --color-only
-
 [merge]
 	conflictstyle = diff3
 
