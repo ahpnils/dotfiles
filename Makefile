@@ -3,14 +3,14 @@ clean:
 	rm -f */*~ */.*~
 
 install:
-	ln -snvf ./bash/.bashrc ~/.bashrc
-	ln -snvf ./bash/.bash_profile ~/.bash_profile
-	ln -snvf ./vim/.vimrc ~/.vimrc
-	ln -snvf ./tmux/.tmux.conf ~/.tmux.conf
-	ln -snvf ./git/.gitconfig ~/.gitconfig
-	ln -snvf ./git/.gitignore ~/.gitignore
+	ln -snvf ${PWD}/bash/.bashrc ~/.bashrc
+	ln -snvf ${PWD}/bash/.bash_profile ~/.bash_profile
+	ln -snvf ${PWD}/vim/.vimrc ~/.vimrc
+	ln -snvf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+	ln -snvf ${PWD}/git/.gitconfig ~/.gitconfig
+	ln -snvf ${PWD}/git/.gitignore ~/.gitignore
 	mkdir -p ${HOME}/.config/htop/
-	ln -snvf ./htop/htoprc ~/.config/htop/htoprc
+	ln -snvf ${PWD}/htop/htoprc ~/.config/htop/htoprc
 
 vim-deps: 
 	mkdir -p ~/.vim/bundle ~/git/github/others
