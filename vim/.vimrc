@@ -12,6 +12,7 @@ Plugin 'hashivim/vim-terraform'
 "Plugin 'fgsch/vim-varnish'
 "Plugin 'saltstack/salt-vim'
 "Plugin 'gabrielelana/vim-markdown'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -116,7 +117,7 @@ autocmd BufNewFile,BufRead *.service* set ft=systemd
 
 " FILEFORMAT
 autocmd FileType gitcommit setlocal textwidth=79 spell colorcolumn=50
-autocmd FileType go setlocal colorcolumn=
+autocmd FileType go setlocal tabstop=2 shiftwidth=2 colorcolumn=
 autocmd FileType text,markdown setlocal textwidth=79
 autocmd FileType make setlocal noexpandtab  " No tabexpand for makefiles
 autocmd Filetype ruby set tabstop=2 softtabstop=2 shiftwidth=2
