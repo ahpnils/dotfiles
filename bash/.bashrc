@@ -63,9 +63,14 @@ fi
 # Custom functions
 #function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
 # thanks eseyman !
-function mkcd() { mkdir -p "${1}" && cd "${1}"; }
-function mani() { info $1 --subnodes --output - | less; }
+mkcd() { mkdir -p "${1}" && cd "${1}"; }
+mani() { info $1 --subnodes --output - | less; }
 lesslog() { ccze -A < $1 | less -R; }
+flatup() { flatpak -y update; }
+dnfup() { sudo dnf -y clean all && sudo dnf -y upgrade; }
+fullup() { flatup && dnfup; }
+fullupandreboot() { fullup && sudo reboot; }
+fullupandhalt() { fullup && sudo poweroff; }
 
 complete -C /usr/bin/terraform terraform
 
