@@ -60,6 +60,18 @@ if $(which shellcheck > /dev/null 2>&1); then
 	alias shellcheck='shellcheck -x'
 fi
 
+# Github aliases
+alias prv="gh pr view --web"
+alias prc="gh pr create --fill"
+alias prd="gh pr create --fill --draft"
+alias prm="gh pr merge --merge --delete-branch"
+
+# Git aliases
+alias gps="git push"
+alias gpl="git pull -r"
+alias gpf="git push -f"
+alias gpc="git commit"
+
 # Custom functions
 #function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
 # thanks eseyman !
