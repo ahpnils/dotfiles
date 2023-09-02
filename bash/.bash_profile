@@ -37,4 +37,4 @@ if $(which delta > /dev/null 2>&1); then
 	export DELTA_PAGER=$(which less)
 fi
 
-# vim:ts=8:sw=2:expandtab
+# vim:ts=2:sw=2:expandtab

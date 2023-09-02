@@ -44,4 +44,4 @@
 [merge]
 	conflictstyle = diff3
 
-# vim:ts=8:sw=2:expandtab
+# vim:ts=2:sw=2:expandtab

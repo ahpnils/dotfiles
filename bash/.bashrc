@@ -69,4 +69,4 @@ lesslog() { ccze -A < $1 | less -R; }
 
 complete -C /usr/bin/terraform terraform
 
-# vim:ts=8:sw=2:expandtab
+# vim:ts=2:sw=2:expandtab

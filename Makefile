@@ -31,4 +31,4 @@ pkgin-deps:
 	sudo pkgin -y install vim most htop git-base git-delta bat \
 		exa bash-completion tree xz
 
-# vim:ts=8:sw=2:expandtab
+# vim:ts=2:sw=2:expandtab
