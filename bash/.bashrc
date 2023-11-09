@@ -35,11 +35,11 @@ alias xzgrep='xzgrep --color=auto'
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
 
-if $(which exa > /dev/null 2>&1); then
-	alias ll='exa -G -l --color=always'
-	alias ls='exa -G -l --color=always'
-	alias l='exa --color=always'
-	alias l.='exa -d .* --color=always'
+if $(which eza > /dev/null 2>&1); then
+	alias ll='eza -G -l --color=always'
+	alias ls='eza -G -l --color=always'
+	alias l='eza --color=always'
+	alias l.='eza -d .* --color=always'
 else
 	alias ll='ls -hlF --color=auto'
 	alias ls='ls -hlF --color=auto'
