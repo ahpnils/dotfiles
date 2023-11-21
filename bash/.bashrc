@@ -50,7 +50,7 @@ if $(which rpm > /dev/null 2>&1); then
 	alias rpmqd='rpm -qd'
 fi
 if $(which tree > /dev/null 2>&1); then
-	alias tree='tree -a -I .git'
+	alias tree='tree -a -C -I .git'
 fi
 if $(which bat > /dev/null 2>&1); then
 	alias cat='bat -pp'
