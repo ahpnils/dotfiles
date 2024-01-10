@@ -11,7 +11,9 @@
 	co = checkout
 	st = status
 	ci = commit
-	sw = switch
+  sw = switch
+  ps = push
+  pl = pull --rebase
 	# Useful when you have to update your last commit
     # with staged files without editing the commit message.
 	oops = commit --amend --no-edit
