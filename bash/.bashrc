@@ -21,6 +21,7 @@ fi
 
 # Custom aliases
 alias c='clear'
+alias g='git'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
