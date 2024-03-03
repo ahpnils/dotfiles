@@ -11,11 +11,11 @@
 	co = checkout
 	st = status
 	ci = commit
-  sw = switch
-  ps = push
-  pl = pull --rebase
+	sw = switch
+	ps = push
+	pl = pull --rebase
 	# Useful when you have to update your last commit
-    # with staged files without editing the commit message.
+	# with staged files without editing the commit message.
 	oops = commit --amend --no-edit
 	# Edit last commit message
 	reword = commit --amend
@@ -30,13 +30,13 @@
 	reflog = delta
 	show = delta
 [log]
-    # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
-    abbrevCommit = true
-    # Automatically --follow when given a single path
-    follow = true
-    # Disable decorate for reflog
-    # (because there is no dedicated `reflog` section available)
-    decorate = false
+	# Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+	abbrevCommit = true
+	# Automatically --follow when given a single path
+	follow = true
+	# Disable decorate for reflog
+	# (because there is no dedicated `reflog` section available)
+	decorate = false
 [delta]
 	syntax-theme = Sublime Snazzy
 	navigate = true
@@ -46,4 +46,4 @@
 [merge]
 	conflictstyle = diff3
 
-# vim:ts=2:sw=2:expandtab
+# vim:ts=2:sw=2:ft=gitconfig

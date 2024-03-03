@@ -2,12 +2,12 @@
 
 # Source global definitions
 if [ -r /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
 fi
 
 # Source custom local aliases and functions
 if [ -r ~/.bashrc.local ]; then
-	source ~/.bashrc.local
+  source ~/.bashrc.local
 fi
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
@@ -16,7 +16,7 @@ fi
 # User specific aliases and functions
 # . /usr/share/powerline/bash/powerline.sh
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 # Custom aliases
@@ -37,28 +37,28 @@ alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
 
 if $(which eza > /dev/null 2>&1); then
-	alias ll='eza -G -l --color=always'
-	alias ls='eza -G -l --color=always'
-	alias l='eza --color=always'
-	alias l.='eza -d .* --color=always'
+  alias ll='eza -G -l --color=always'
+  alias ls='eza -G -l --color=always'
+  alias l='eza --color=always'
+  alias l.='eza -d .* --color=always'
 else
-	alias ll='ls -hlF --color=auto'
-	alias ls='ls -hlF --color=auto'
-	alias l='ls --color=auto'
-	alias l.='ls -d .* --color=auto'
+  alias ll='ls -hlF --color=auto'
+  alias ls='ls -hlF --color=auto'
+  alias l='ls --color=auto'
+  alias l.='ls -d .* --color=auto'
 fi
 if $(which rpm > /dev/null 2>&1); then
-	alias rpmqd='rpm -qd'
+  alias rpmqd='rpm -qd'
 fi
 if $(which tree > /dev/null 2>&1); then
-	alias tree='tree -a -C -I .git'
+  alias tree='tree -a -C -I .git'
 fi
 if $(which bat > /dev/null 2>&1); then
-	alias cat='bat -pp'
+  alias cat='bat -pp'
 fi
 
 if $(which shellcheck > /dev/null 2>&1); then
-	alias shellcheck='shellcheck -x'
+  alias shellcheck='shellcheck -x'
 fi
 
 # Github aliases
@@ -87,4 +87,4 @@ fullupandhalt() { fullup && sudo poweroff; }
 
 complete -C /usr/bin/terraform terraform
 
-# vim:ts=2:sw=2:expandtab
+# vim:ts=2:sw=2:ft=bash

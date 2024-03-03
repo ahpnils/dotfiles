@@ -132,47 +132,47 @@ autocmd BufnewFile,BufReadPost *.sage set filetype=python
 autocmd BufNewFile,BufReadPost *.cisco set filetype=cisco
 
 " SPECIFIC STUFFS
-let hs_highlight_boolean = 1            " Highlight boolean in haskell
-let hs_highlight_debug = 1                      " Highlight debug in Haskell
-let hs_highlight_delimiters = 1 " Highlight delimiters in Haskell
-let hs_highlight_types = 1                      " Highlight types in Haskell
-let hs_highlight_more_types = 1 " Highlight every types in haskell
-let msql_sql_query = 1                                  " Better mysql highlight
-let ruby_operators = 1          " Highlight operatos
-let g:tex_fold_enabled=1        " fold on chapters/parts/sections/...
-let python_highlight_all = 1            " Better python highlight
-let asmsyntax="nasm"            " tasm syntax for asm
-let c_comment_strings=1         " strings and numbers in comments
-let c_gnu=1                     " dealing with ugly code
-let c_ansi_typedefs=1           " ansi \o/
-let c_ansi_constants=1          " ansi \o/
-let c_syntax_for_h=1            " .h are C
-let php_htmlInStrings = 1                               " Highlight HTML in php strings
-let php_sql_query = 1                                           " Highligh SQL in PHP
+let hs_highlight_boolean = 1			" Highlight boolean in haskell
+let hs_highlight_debug = 1			" Highlight debug in Haskell
+let hs_highlight_delimiters = 1 		" Highlight delimiters in Haskell
+let hs_highlight_types = 1			" Highlight types in Haskell
+let hs_highlight_more_types = 1			" Highlight every types in haskell
+let msql_sql_query = 1				" Better mysql highlight
+let ruby_operators = 1				" Highlight operatos
+let g:tex_fold_enabled=1			" fold on chapters/parts/sections/...
+let python_highlight_all = 1			" Better python highlight
+let asmsyntax="nasm"				" tasm syntax for asm
+let c_comment_strings=1				" strings and numbers in comments
+let c_gnu=1					" dealing with ugly code
+let c_ansi_typedefs=1				" ansi \o/
+let c_ansi_constants=1				" ansi \o/
+let c_syntax_for_h=1				" .h are C
+let php_htmlInStrings = 1			" Highlight HTML in php strings
+let php_sql_query = 1				" Highligh SQL in PHP
 
 set statusline=
 set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
 set statusline+=%#Search#%{(mode()=='i')?'\ \ INSERT\ ':''}
 set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
 set statusline+=%#DiffChange#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline+=%#Cursor#        " colour
-set statusline+=\ %n\            " buffer number
-set statusline+=%#Visual#        " colour
+set statusline+=%#Cursor#			" colour
+set statusline+=\ %n\				" buffer number
+set statusline+=%#Visual#			" colour
 set statusline+=%{&paste?'\ PASTE\ ':''}
 set statusline+=%{&spell?'\ SPELL\ ':''}
-set statusline+=%#CursorIM#      " colour
-set statusline+=%w                                                 " preview flag
-set statusline+=%h                                                 " help flag
-set statusline+=%r                                                 " readonly flag
-set statusline+=%m                                                 " modified [+] flag
-set statusline+=%#Cursor#                                " colour
-set statusline+=%#CursorLine#      " colour
-set statusline+=\ %f\              " file name and relative path
-set statusline+=%=                                                       " right align
-set statusline+=%#CursorLine#    " colour
-set statusline+=\ %{&filetype}\  " file type (%Y and %y are too ugly)
-set statusline+=%#CursorIM#      " colour
-set statusline+=\ %3l:%-2c\              " line + column
-set statusline+=%#Cursor#        " colour
-set statusline+=\ %3p%%\                                 " percentage
+set statusline+=%#CursorIM#			" colour
+set statusline+=%w				" preview flag
+set statusline+=%h				" help flag
+set statusline+=%r				" readonly flag
+set statusline+=%m				" modified [+] flag
+set statusline+=%#Cursor#			" colour
+set statusline+=%#CursorLine#			" colour
+set statusline+=\ %f\				" file name and relative path
+set statusline+=%=				" right align
+set statusline+=%#CursorLine#			" colour
+set statusline+=\ %{&filetype}\			" file type (%Y and %y are too ugly)
+set statusline+=%#CursorIM#			" colour
+set statusline+=\ %3l:%-2c\			" line + column
+set statusline+=%#Cursor#			" colour
+set statusline+=\ %3p%%\			" percentage
 
