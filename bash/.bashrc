@@ -35,6 +35,8 @@ alias zegrep='zegrep --color=auto'
 alias xzgrep='xzgrep --color=auto'
 alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
+# thanks iMil !
+alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
 
 if $(which eza > /dev/null 2>&1); then
   alias ll='eza -G -l --color=always'
