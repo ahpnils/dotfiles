@@ -23,6 +23,11 @@ rpm-deps:
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
 		ShellCheck eza tree
 
+deb-deps:
+	sudo apt-get -y update && \
+    sudo apt-get -y install ccze vim most htop git-delta bat \
+		shellcheck eza tree
+
 pkgin-deps:
 	# the following softwares are not available at the moment :
 	# ccze, shellcheck

@@ -1,0 +1,14 @@
+name: check
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: make deb-deps
+      - name: Install more dependencies
+        run: make vim-deps
+      - name: Test installation
+        run: make install
