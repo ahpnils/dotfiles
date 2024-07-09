@@ -28,6 +28,10 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Enable syntax and plugins
+syntax enable
+filetype plugin on
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -176,4 +180,12 @@ set statusline+=%#CursorIM#			" colour
 set statusline+=\ %3l:%-2c\			" line + column
 set statusline+=%#Cursor#			" colour
 set statusline+=\ %3p%%\			" percentage
+
+" Misc configurations found on https://github.com/changemewtf/no_plugins
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+" Display all matching files when we tab complete
+set wildmenu
 
