@@ -25,7 +25,8 @@ export HISTTIMEFORMAT="%y/%m/%d %T "
 # export HISTFILESIZE=2000000
 
 if $(which vim > /dev/null 2>&1); then
-	alias vi='vim'
+	alias v='vim -p'
+	alias vi='vim -p'
 	export EDITOR=$(which vim)
 fi
 
