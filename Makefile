@@ -21,12 +21,12 @@ vim-deps:
 
 rpm-deps:
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
-		ShellCheck eza tree
+		ShellCheck eza tree stow
 
 deb-deps:
 	sudo apt-get -y update && \
     sudo apt-get -y install ccze vim most htop git-delta bat \
-		shellcheck eza tree
+		shellcheck eza tree stow
 
 pkgin-deps:
 	# the following softwares are not available at the moment :
@@ -34,6 +34,9 @@ pkgin-deps:
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
-		eza bash-completion tree xz
+		eza bash-completion tree xz stow
+
+stow:
+	stow -n -v --target=${HOME} --dotfiles .
 
 # vim:ts=2:sw=2:expandtab
