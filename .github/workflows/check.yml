@@ -10,5 +10,7 @@ jobs:
         run: make deb-deps
       - name: Install more dependencies
         run: make vim-deps
+      - name: Run checks
+        run: make check
       - name: Test installation
         run: make install

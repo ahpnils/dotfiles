@@ -2,6 +2,10 @@ clean:
 	rm -f *~ .*~
 	rm -f */*~ */.*~
 
+check:
+	shellcheck -x -s bash bash/.bashrc
+	shellcheck -x -s bash bash/.bash_profile
+
 install:
 	ln -snvf ${PWD}/bash/.bashrc ~/.bashrc
 	ln -snvf ${PWD}/bash/.bash_profile ~/.bash_profile

@@ -2,6 +2,7 @@
 
 # Get the aliases and functions
 if [ -r ~/.bashrc ]; then
+	# shellcheck source=/dev/null
 	. ~/.bashrc
 fi
 
@@ -24,18 +25,18 @@ export HISTTIMEFORMAT="%y/%m/%d %T "
 # export HISTSIZE=1000000
 # export HISTFILESIZE=2000000
 
-if $(which vim > /dev/null 2>&1); then
+if which vim > /dev/null 2>&1; then
 	alias v='vim -p'
 	alias vi='vim -p'
-	export EDITOR=$(which vim)
+	EDITOR=$(which vim); export EDITOR
 fi
 
-if $(which most > /dev/null 2>&1); then
-	export PAGER=$(which most)
+if which most > /dev/null 2>&1; then
+	PAGER=$(which most); export PAGER
 fi
 
-if $(which delta > /dev/null 2>&1); then
-	export DELTA_PAGER=$(which less)
+if which delta > /dev/null 2>&1; then
+	DELTA_PAGER=$(which less) ; export DELTA_PAGER
 fi
 
 # vim:ts=2:sw=2:ft=bash
