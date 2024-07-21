@@ -12,11 +12,7 @@ if [ -r ~/.bashrc.local ]; then
   source ~/.bashrc.local
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # User specific aliases and functions
-# . /usr/share/powerline/bash/powerline.sh
 if [ "${TILIX_ID}" ] || [ "${VTE_VERSION}" ]; then
 	# shellcheck source=/dev/null
   source /etc/profile.d/vte.sh
@@ -110,7 +106,6 @@ if which git > /dev/null 2>&1; then
 fi
 
 # Custom functions
-#function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
 # thanks eseyman !
 # shellcheck disable=SC2164
 mkcd() { mkdir -p "${1}" && cd "${1}"; }
@@ -121,6 +116,5 @@ dnfup() { sudo dnf -y clean all && sudo dnf -y upgrade; }
 fullup() { flatup && dnfup; }
 fullupandreboot() { fullup && sudo reboot; }
 fullupandhalt() { fullup && sudo poweroff; }
-
 
 # vim:ts=2:sw=2:ft=bash
