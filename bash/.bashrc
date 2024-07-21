@@ -2,6 +2,7 @@
 
 # Source global definitions
 if [ -r /etc/bashrc ]; then
+	# shellcheck source=/dev/null
   . /etc/bashrc
 fi
 
@@ -17,6 +18,7 @@ fi
 # User specific aliases and functions
 # . /usr/share/powerline/bash/powerline.sh
 if [ "${TILIX_ID}" ] || [ "${VTE_VERSION}" ]; then
+	# shellcheck source=/dev/null
   source /etc/profile.d/vte.sh
 fi
 
