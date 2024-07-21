@@ -21,7 +21,6 @@ fi
 
 # Custom aliases
 alias c='clear'
-alias g='git'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -38,6 +37,29 @@ alias xzfgrep='xzfgrep --color=auto'
 # thanks iMil !
 alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
 
+# Bat aliases
+if $(which bat > /dev/null 2>&1); then
+  alias cat='bat -pp'
+fi
+
+# Git aliases
+if $(which git > /dev/null 2>&1); then
+	alias g='git'
+	alias gps="git push"
+	alias gpl="git pull -r"
+	alias gpf="git push -f"
+	alias gpc="git commit"
+fi
+
+# Github aliases
+if $(which gh > /dev/null 2>&1); then
+	alias prv="gh pr view --web"
+	alias prc="gh pr create --fill"
+	alias prd="gh pr create --fill --draft"
+	alias prm="gh pr merge --merge --delete-branch"
+fi
+
+# Eza aliases
 if $(which eza > /dev/null 2>&1); then
   alias ll='eza -G -l --color=always'
   alias ls='eza -G -l --color=always'
@@ -49,31 +71,27 @@ else
   alias l='ls --color=auto'
   alias l.='ls -d .* --color=auto'
 fi
+
+# RPM aliases
 if $(which rpm > /dev/null 2>&1); then
   alias rpmqd='rpm -qd'
 fi
-if $(which tree > /dev/null 2>&1); then
-  alias tree='tree -a -C -I .git'
-fi
-if $(which bat > /dev/null 2>&1); then
-  alias cat='bat -pp'
-fi
 
+# Shellcheck aliases
 if $(which shellcheck > /dev/null 2>&1); then
   alias shellcheck='shellcheck -x'
 fi
 
-# Github aliases
-alias prv="gh pr view --web"
-alias prc="gh pr create --fill"
-alias prd="gh pr create --fill --draft"
-alias prm="gh pr merge --merge --delete-branch"
+# Tree aliases
+if $(which tree > /dev/null 2>&1); then
+  alias tree='tree -a -C -I .git'
+fi
 
-# Git aliases
-alias gps="git push"
-alias gpl="git pull -r"
-alias gpf="git push -f"
-alias gpc="git commit"
+# Autocomplete settings
+
+if $(which terraform > /dev/null 2>&1); then
+	complete -C /usr/bin/terraform terraform
+fi
 
 # Custom functions
 #function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
@@ -87,6 +105,5 @@ fullup() { flatup && dnfup; }
 fullupandreboot() { fullup && sudo reboot; }
 fullupandhalt() { fullup && sudo poweroff; }
 
-complete -C /usr/bin/terraform terraform
 
 # vim:ts=2:sw=2:ft=bash
