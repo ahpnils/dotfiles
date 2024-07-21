@@ -17,11 +17,9 @@ install:
 	ln -snvf ${PWD}/htop/htoprc ~/.config/htop/htoprc
 
 vim-deps: 
-	mkdir -p ~/.vim/bundle ~/git/github/others
-	git clone https://github.com/VundleVim/Vundle.vim.git \
-		~/git/github/others/Vundle.vim
-	ln -snvf ~/git/github/others/Vundle.vim ~/.vim/bundle/Vundle.vim
-	vim +PluginInstall +qall
+	mkdir -p ~/.vim/pack/plugins/start
+	git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+	git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
 
 rpm-deps:
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
