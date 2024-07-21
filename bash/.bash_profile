@@ -3,7 +3,7 @@
 # Get the aliases and functions
 if [ -r ~/.bashrc ]; then
 	# shellcheck source=/dev/null
-	. ~/.bashrc
+	source ~/.bashrc
 fi
 
 # User specific environment and startup programs

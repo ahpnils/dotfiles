@@ -3,7 +3,7 @@
 # Source global definitions
 if [ -r /etc/bashrc ]; then
 	# shellcheck source=/dev/null
-  . /etc/bashrc
+  source /etc/bashrc
 fi
 
 # Source custom local aliases and functions
@@ -100,7 +100,7 @@ if which git > /dev/null 2>&1; then
 	for git_completion in ${git_completions}; do
 		if [ -r "${git_completion}" ]; then
 			# shellcheck source=/dev/null
-			. "${git_completion}" && __git_complete g git
+			source "${git_completion}" && __git_complete g git
 		fi
 	done
 fi
