@@ -93,6 +93,18 @@ if $(which terraform > /dev/null 2>&1); then
 	complete -C /usr/bin/terraform terraform
 fi
 
+if $(which git > /dev/null 2>&1); then
+	git_completions="/usr/share/bash-completion/completions/git \
+		/usr/pkg/share/bash-completion/completions/git \
+		/opt/pkg/share/bash-completion/completions/git \
+		/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
+	for git_completion in ${git_completions}; do
+		if [ -r ${git_completion} ]; then
+			. ${git_completion} && __git_complete g git
+		fi
+	done
+fi
+
 # Custom functions
 #function which () { (alias; eval ${which_declare}) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@; }
 # thanks eseyman !
