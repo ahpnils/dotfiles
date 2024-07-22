@@ -105,6 +105,8 @@ if which git > /dev/null 2>&1; then
 	done
 fi
 
+eval "$(fzf --bash)"
+
 # Custom functions
 # thanks eseyman !
 # shellcheck disable=SC2164
