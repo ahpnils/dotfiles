@@ -85,7 +85,7 @@ set number
 set encoding=utf-8
 set fileencoding=utf-8
 scriptencoding utf8
-set shell=/bin/bash
+"set shell=/bin/bash
 set laststatus=2
 set colorcolumn=81
 "set fillchars+=vert:|
