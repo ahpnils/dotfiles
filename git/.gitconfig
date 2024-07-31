@@ -12,6 +12,7 @@
 	st = status
 	ci = commit
 	sw = switch
+	pf = push --force
 	ps = push
 	pl = pull --rebase
 	# Useful when you have to update your last commit
