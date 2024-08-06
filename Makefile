@@ -18,8 +18,11 @@ install:
 
 vim-deps: 
 	mkdir -p ~/.vim/pack/plugins/start
-	git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
-	git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
+	git -C ~/.vim/pack/plugins/start/vim-go pull -r || git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+	git -C ~/.vim/pack/plugins/start/vim-terraform pull -r || git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
+	git -C ~/.vim/pack/plugins/start/vim-fugitive pull -r || git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/vim-fugitive
+	git -C ~/.vim/pack/plugins/start/vim-sensible pull -r || git clone https://github.com/tpope/vim-sensible.git ~/.vim/pack/plugins/start/vim-sensible
+	git -C ~/.vim/pack/plugins/start/vim-flagship pull -r || git clone https://github.com/tpope/vim-flagship.git ~/.vim/pack/plugins/start/vim-flagship
 
 rpm-deps:
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
