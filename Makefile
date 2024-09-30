@@ -30,7 +30,7 @@ rpm-deps:
 
 deb-deps:
 	sudo apt-get -y update && \
-    sudo apt-get -y install ccze vim most htop git-delta bat \
+		sudo apt-get -y install ccze vim most htop git-delta bat \
 		shellcheck eza tree fzf
 
 pkgin-deps:
@@ -40,5 +40,3 @@ pkgin-deps:
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
 		eza bash-completion tree xz fzf
-
-# vim:ts=2:sw=2:expandtab
