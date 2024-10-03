@@ -15,6 +15,7 @@ install:
 	ln -snvf ${PWD}/git/.gitignore ~/.gitignore
 	mkdir -p ${HOME}/.config/htop/
 	ln -snvf ${PWD}/htop/htoprc ~/.config/htop/htoprc
+	ln -snvf ${PWD}/config/starship.toml ~/.config/starship.toml
 
 vim-deps: 
 	mkdir -p ~/.vim/pack/plugins/start
@@ -25,8 +26,9 @@ vim-deps:
 	git -C ~/.vim/pack/plugins/start/vim-flagship pull -r || git clone https://github.com/tpope/vim-flagship.git ~/.vim/pack/plugins/start/vim-flagship
 
 rpm-deps:
+	sudo dnf copr enable atim/starship
 	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
-		ShellCheck eza tree fzf
+		ShellCheck eza tree fzf starship
 
 deb-deps:
 	sudo apt-get -y update && \
