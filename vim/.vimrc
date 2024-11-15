@@ -1,5 +1,6 @@
 runtime! plugin/sensible.vim
 set number
+set background=dark
 
 " Per file-type settings
 autocmd BufRead,BufNewFile *.sh set shiftwidth=2 tabstop=2
