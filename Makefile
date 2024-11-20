@@ -13,7 +13,8 @@ install:
 	ln -snvf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 	ln -snvf ${PWD}/git/.gitconfig ~/.gitconfig
 	ln -snvf ${PWD}/git/.gitignore ~/.gitignore
-	mkdir -p ${HOME}/.config/htop/
+	mkdir -p ${HOME}/.config/{btop,htop}
+	ln -snvf ${PWD}/btop/btop.conf ~/.config/btop/btop.conf
 	ln -snvf ${PWD}/htop/htoprc ~/.config/htop/htoprc
 	ln -snvf ${PWD}/config/starship.toml ~/.config/starship.toml
 
