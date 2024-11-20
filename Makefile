@@ -24,6 +24,8 @@ vim-deps:
 	git -C ~/.vim/pack/plugins/start/vim-fugitive pull -r || git clone https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/vim-fugitive
 	git -C ~/.vim/pack/plugins/start/vim-sensible pull -r || git clone https://github.com/tpope/vim-sensible.git ~/.vim/pack/plugins/start/vim-sensible
 	git -C ~/.vim/pack/plugins/start/vim-flagship pull -r || git clone https://github.com/tpope/vim-flagship.git ~/.vim/pack/plugins/start/vim-flagship
+	git -C ~/.vim/pack/plugins/start/vim-airline pull -r || git clone https://github.com/vim-airline/vim-airline.git ~/.vim/pack/plugins/start/vim-airline
+	git -C ~/.vim/pack/plugins/start/vim-airline-themes pull -r || git clone https://github.com/vim-airline/vim-airline-themes.git ~/.vim/pack/plugins/start/vim-airline-themes
 
 rpm-deps:
 	sudo dnf copr enable atim/starship

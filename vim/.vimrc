@@ -2,6 +2,9 @@ runtime! plugin/sensible.vim
 set number
 set background=dark
 
+" Airline theme, needs airline and airline-themes plugins.
+let g:airline_theme='badwolf'
+
 " Per file-type settings
 autocmd BufRead,BufNewFile *.sh set shiftwidth=2 tabstop=2
 
