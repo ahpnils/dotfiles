@@ -3,8 +3,8 @@ clean:
 	rm -f */*~ */.*~
 
 check:
-	shellcheck -x -s bash bash/.bashrc
-	shellcheck -x -s bash bash/.bash_profile
+	shellcheck -x -s bash config/.bashrc
+	shellcheck -x -s bash config/.bash_profile
 
 install:
 	ln -snvf ${PWD}/bash/.bashrc ~/.bashrc
@@ -30,14 +30,19 @@ vim-deps:
 	git -C ~/.vim/pack/plugins/start/vim-airline-themes pull -r || git clone https://github.com/vim-airline/vim-airline-themes.git ~/.vim/pack/plugins/start/vim-airline-themes
 
 rpm-deps:
-	sudo dnf copr enable atim/starship
-	sudo dnf -y install ccze vim-enhanced most htop git-delta bat \
-		ShellCheck eza tree fzf starship
+	sudo dnf -y install dnf-plugins-core
+	sudo dnf -y copr enable atim/starship
+	sudo dnf -y install ccze vim-enhanced most htop git-core git-delta bat \
+		ShellCheck eza tree fzf starship stow
 
 deb-deps:
+	if [ -f /tmp/starshipinstall.sh ]; then rm -f /tmp/starshipinstall.sh; fi
+	curl -sS https://starship.rs/install.sh -o /tmp/starshipinstall.sh
+	chmod +x /tmp/starshipinstall.sh
+	/tmp/starshipinstall.sh -y
 	sudo apt-get -y update && \
 		sudo apt-get -y install ccze vim most htop git-delta bat \
-		shellcheck eza tree fzf
+		shellcheck eza tree fzf stow
 
 pkgin-deps:
 	# the following softwares are not available at the moment :
@@ -45,4 +50,21 @@ pkgin-deps:
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
-		eza bash-completion tree xz fzf
+		eza bash-completion tree xz fzf stow
+
+starship-stow:
+	stow -v -t ${HOME} --dotfiles starship
+
+stow:
+	# clean-up before first install
+	if [ -f ${HOME}/.bashrc ]; then rm -vf ${HOME}/.bashrc; fi
+	if [ -f ${HOME}/.bash_profile ]; then rm -vf ${HOME}/.bash_profile; fi
+	stow -v -t ${HOME} --dotfiles config
+
+test-stow:
+	set -e
+	for stowdir in config starship; do \
+		chkstow --aliens -t ${HOME} ${stowdir} ; \
+		chkstow --badlinks -t ${HOME} ${stowdir} ; \
+		chkstow --list -t ${HOME} ${stowdir} ; \
+	done

@@ -12,5 +12,7 @@ jobs:
         run: make vim-deps
       - name: Run checks
         run: make check
-      - name: Test installation
-        run: make install
+      - name: Run installation
+        run: make stow
+      - name: test installation
+        run: make test-stow
