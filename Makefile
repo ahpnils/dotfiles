@@ -36,10 +36,7 @@ rpm-deps:
 		ShellCheck eza tree fzf starship stow
 
 deb-deps:
-	if [ -f /tmp/starshipinstall.sh ]; then rm -f /tmp/starshipinstall.sh; fi
-	curl -sS https://starship.rs/install.sh -o /tmp/starshipinstall.sh
-	chmod +x /tmp/starshipinstall.sh
-	/tmp/starshipinstall.sh -y
+	curl -sS https://starship.rs/install.sh | sh -s -- "-f"
 	sudo apt-get -y update && \
 		sudo apt-get -y install ccze vim most htop git-delta bat \
 		shellcheck eza tree fzf stow
