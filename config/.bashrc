@@ -35,6 +35,25 @@ alias xzegrep='xzegrep --color=auto'
 alias xzfgrep='xzfgrep --color=auto'
 # thanks iMil !
 alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
+# Filter out tmp and dev filesystems, names differ from an OS to another.
+alias df='df -h -x tmpfs -x devtmpfs -x efivarfs -x devfs'
+
+# Vim aliases
+if which vim > /dev/null 2>&1; then
+	alias v='vim -p'
+	alias vi='vim -p'
+	EDITOR=$(which vim); export EDITOR
+fi
+
+# Most is a somewhat better pager
+if which most > /dev/null 2>&1; then
+	PAGER=$(which most); export PAGER
+fi
+
+# Delta is an awesome pager for git
+if which delta > /dev/null 2>&1; then
+	DELTA_PAGER=$(which less) ; export DELTA_PAGER
+fi
 
 # Bat aliases
 if which bat > /dev/null 2>&1; then
@@ -105,10 +124,30 @@ if which git > /dev/null 2>&1; then
 	done
 fi
 
-eval "$(fzf --bash)"
+# User specific environment and startup programs
+
+# Add dates in bash_history :
+export HISTTIMEFORMAT="%y/%m/%d %T "
+# export HISTSIZE=1000000
+# export HISTFILESIZE=2000000
+
+# More places to exec programs
+export PATH=/bin:/sbin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin:$HOME/.bin
+
+# In case Starship is not installed or does not work properly
+if [ "$UID" -eq 0 ] ; then
+	PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;31m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;31m\]\$\[\E[0m\] '
+else
+	PS1=$'\[$(tput bold)\]\[$(tput setaf 6)\]\A \[\E[01;32m\]\u\[\E[0m\]@\[\E[01;36m\]\h\[\E[0m\]:\w\[\E[01;32m\]$(parse_git_branch)\[\033[00m\] \$\[\E[0m\] '
+fi
+
 if [ -L "${HOME}"/.starship.toml ]; then
 	export STARSHIP_CONFIG=${HOME}/.starship.toml
 	eval "$(starship init bash)"
+fi
+
+if which fzf > /dev/null 2>&1; then
+	eval "$(fzf --bash)"
 fi
 
 # Custom functions
@@ -122,5 +161,8 @@ dnfup() { sudo dnf -y clean all && sudo dnf -y upgrade; }
 fullup() { flatup && dnfup; }
 fullupandreboot() { fullup && sudo reboot; }
 fullupandhalt() { fullup && sudo poweroff; }
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 # vim:ts=2:sw=2:ft=bash
