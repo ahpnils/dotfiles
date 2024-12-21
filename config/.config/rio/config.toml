@@ -1,0 +1,86 @@
+[shell]
+# TODO : use platform to change the path to Bash on macOS.
+program = "/bin/bash"
+args = ["--login"]
+
+[fonts]
+# TODO : find a font that renders right and available on Linux + macOS.
+#family = "Fira Code"
+#family = "Monospace Regular"
+#family = "Droid Sans"
+#family = "Droid Sans"
+#family = "Noto Sans"
+#family = "Open Sans"
+size = 12
+
+[window]
+mode = "maximized"
+decorations = "disabled"
+
+[bindings]
+keys = [
+  { key = "1", with = "control | alt", action = "SelectTab(0)" },
+  { key = "2", with = "control | alt", action = "SelectTab(1)" },
+  { key = "3", with = "control | alt", action = "SelectTab(2)" },
+  { key = "4", with = "control | alt", action = "SelectTab(3)" },
+  { key = "5", with = "control | alt", action = "SelectTab(4)" },
+  { key = "6", with = "control | alt", action = "SelectTab(5)" },
+  { key = "7", with = "control | alt", action = "SelectTab(6)" },
+  { key = "8", with = "control | alt", action = "SelectTab(7)" },
+  { key = "9", with = "control | alt", action = "SelectTab(8)" },
+  { key = "0", with = "control | alt", action = "SelectTab(9)" },
+  { key = "\\", with = "control | alt", action = "SplitRight" },
+  { key = "-", with = "control | alt", action = "SplitDown" },
+]
+
+[cursor]
+blinking = true
+blinking-interval = 1200 # same as Gnome's default
+
+[colors]
+background = '#000000'
+foreground = '#00FF00'
+cursor = '#00FF00'
+
+black = '#000000'
+red = '#AA0000'
+green = '#00AA00'
+yellow = '#FFFF54'
+blue = '#0000AA'
+magenta = '#AA00AA'
+cyan = '#00AAAA'
+white = '#AAAAAA'
+
+light-black   = '#545454'
+light-red     = '#FF5454'
+light-green   = '#00AA00'
+dim-yellow    = '#AA5400'
+light-blue    = '#5454FF'
+light-magenta = '#FF54FF'
+light-cyan    = '#54FFFF'
+light-white   = '#FFFFFF'
+
+# Cursor
+#cursor = '#F712FF'
+#vi-cursor = '#12d0ff'
+
+# Navigation
+tabs = '#AAAAAA'
+#tabs-foreground = '#7d7d7d'
+#tabs-active = '#303030'
+tabs-active-highlight = '#00FF00'
+tabs-active-foreground = '#FFFFFF'
+#bar = '#1b1a1a'
+
+# Search
+#search-match-background = '#44C9F0'
+#search-match-foreground = '#FFFFFF'
+#search-focused-match-background = '#E6A003'
+#search-focused-match-foreground = '#FFFFFF'
+
+# Selection
+selection-foreground = '#000000'
+selection-background = '#00FF00'
+
+[navigation]
+mode = "TopTab" # not sure if I prefer the default (Bookmark)
