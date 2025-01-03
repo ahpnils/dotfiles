@@ -1,0 +1,33 @@
+# Custom Ghostty Configuration by Nils
+
+# List of themes to try, if I get bored with Homebrew
+#theme = 3024 Night
+#theme = Adventure
+#theme = Builtin Tango Dark
+#theme = CGA
+#theme = Deep
+#theme = ENCOM
+#theme = Firefly Traditional
+#theme = HaX0R_GR33N
+theme = Homebrew
+#theme = Hurtado
+#theme = iTerm2 Dark Background
+#theme = iTerm2 Default
+#theme = iTerm2 Tango Dark
+#theme = Pro
+#theme = Retro
+#theme = Symfonic
+#theme = synthwave
+#theme = VibrantInk
+#theme = Wez
+
+font-size = 8
+#font-style = Monospace Regular
+window-decoration = false
+# https://ghostty.org/docs/config/reference#fullscreen
+fullscreen = true
+# no tabs button, but it looks cool.
+gtk-tabs-location = hidden
+copy-on-select = true
+# https://ghostty.org/docs/config/reference#term
+term = xterm-256color
