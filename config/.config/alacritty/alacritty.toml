@@ -1,0 +1,38 @@
+[general]
+live_config_reload = true
+[window]
+decorations = "None"
+startup_mode = "Maximized"
+[font]
+normal = { family = "FiraCode", style = "Regular" }
+size = 8.5
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 1200
+[colors]
+[colors.primary]
+background = '#000000'
+foreground = '#00FF00'
+[colors.cursor]
+cursor = '#00FF00'
+
+[colors.normal]
+black = '#000000'
+red = '#AA0000'
+green = '#00AA00'
+yellow = '#FFFF54'
+blue = '#0000AA'
+magenta = '#AA00AA'
+cyan = '#00AAAA'
+white = '#AAAAAA'
+
+[colors.bright]
+black   = '#545454'
+red     = '#FF5454'
+green   = '#00AA00'
+blue    = '#5454FF'
+magenta = '#FF54FF'
+cyan    = '#54FFFF'
+white   = '#FFFFFF'
+
+#dim-yellow    = '#AA5400'
