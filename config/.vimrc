@@ -10,7 +10,7 @@ autocmd BufRead,BufNewFile *.sh set shiftwidth=2 tabstop=2
 
 " Per format settings
 autocmd FileType gitcommit setlocal textwidth=72 spell colorcolumn=50
-autocmd FileType bash setlocal tabstop=2 shiftwidth=2 colorcolumn=
+autocmd FileType sh,bash setlocal tabstop=2 shiftwidth=2 colorcolumn=
 autocmd FileType go setlocal tabstop=2 shiftwidth=2 colorcolumn=
 autocmd FileType text,markdown setlocal textwidth=79
 autocmd FileType make set noexpandtab shiftwidth=2 tabstop=2 " No tabexpand for makefiles
