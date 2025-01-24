@@ -132,7 +132,12 @@ export HISTTIMEFORMAT="%y/%m/%d %T "
 # export HISTFILESIZE=2000000
 
 # More places to exec programs
-export PATH=/bin:/sbin:$PATH:/sbin:/usr/sbin:$HOME/.local/bin:$HOME/bin:$HOME/.bin
+home_paths="${HOME}/.local/bin ${HOME}/bin ${HOME}/.bin"
+for home_path in ${home_paths}; do
+	if [[ ":${PATH}:" != *":${home_path}:"* ]]; then
+		export PATH="${home_path}:${PATH}"
+	fi
+done
 
 # In case Starship is not installed or does not work properly
 if [ "$UID" -eq 0 ] ; then
