@@ -21,13 +21,15 @@ theme = Homebrew
 #theme = VibrantInk
 #theme = Wez
 
-font-size = 8
-#font-style = Monospace Regular
-window-decoration = false
+font-size = 12
+font-family = "NotoMono Nerd Font Mono"
+#font-family = FiraCode
+# window-decoration = false
 # https://ghostty.org/docs/config/reference#fullscreen
 fullscreen = true
 # no tabs button, but it looks cool.
-gtk-tabs-location = hidden
+#gtk-tabs-location = hidden
 copy-on-select = true
 # https://ghostty.org/docs/config/reference#term
 term = xterm-256color
+quit-after-last-window-closed = true
