@@ -93,6 +93,8 @@ $container\
 $shell\
 $character"""
 
+command_timeout = 1500
+
 [time]
 disabled = false
 format = '🕙[\[ $time \]]($style) '
