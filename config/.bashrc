@@ -128,8 +128,9 @@ fi
 
 # Add dates in bash_history :
 export HISTTIMEFORMAT="%y/%m/%d %T "
-# export HISTSIZE=1000000
-# export HISTFILESIZE=2000000
+# Unlimited Bash history :
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 # More places to exec programs
 home_paths="${HOME}/.local/bin ${HOME}/bin ${HOME}/.bin"
