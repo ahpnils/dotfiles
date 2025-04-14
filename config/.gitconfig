@@ -6,6 +6,7 @@
 	default = simple
 	autoSetupRemote = yes
 [alias]
+	aa = add .
 	# Display tree-like log, and is more compact than the default log
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%Cred%d%Creset %s %Cgreen(%an %ad)%Creset'
 	adog = log --all --decorate --oneline --graph
