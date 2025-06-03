@@ -57,7 +57,7 @@ fi
 
 # Bat aliases
 if which bat > /dev/null 2>&1; then
-  alias cat='bat -pp'
+  alias cat='bat -pp --tabs 2'
 fi
 
 # Git aliases
