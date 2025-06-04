@@ -93,7 +93,7 @@ $container\
 $shell\
 $character"""
 
-command_timeout = 1500
+command_timeout = 3000
 
 [time]
 disabled = false
