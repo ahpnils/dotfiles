@@ -1,5 +1,6 @@
 [include]
 	path = ~/.gitconfig.local
+	path = ~/.config/git/gitconfig.local
 [user]
 	name = Nils Ratusznik
 [push]
