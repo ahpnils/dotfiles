@@ -18,7 +18,7 @@ if [ "${TILIX_ID}" ] || [ "${VTE_VERSION}" ]; then
   source /etc/profile.d/vte.sh
 fi
 
-# Custom aliases
+# Custom aliases and associated configurations.
 alias c='clear'
 alias rm='rm -i'
 alias cp='cp -i'
@@ -29,12 +29,17 @@ alias fgrep='fgrep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias zfgrep='zfgrep --color=auto'
 alias zegrep='zegrep --color=auto'
+
 # on NetBSD and macOS, you need xz to get the grep variants.
-alias xzgrep='xzgrep --color=auto'
-alias xzegrep='xzegrep --color=auto'
-alias xzfgrep='xzfgrep --color=auto'
+if which xz > /dev/null 2>&1; then
+  alias xzgrep='xzgrep --color=auto'
+  alias xzegrep='xzegrep --color=auto'
+  alias xzfgrep='xzfgrep --color=auto'
+fi
+
 # thanks iMil !
 alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
+
 # Filter out tmp and dev filesystems, names differ from an OS to another.
 alias df='df -h -x tmpfs -x devtmpfs -x efivarfs -x devfs'
 
