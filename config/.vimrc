@@ -1,6 +1,10 @@
 runtime! plugin/sensible.vim
 set number
 set background=dark
+" pablo and wildcharm have some too dark parts
+" ron and sorbet should be ok with black background color
+" my preferred overall at the moment is ron because of the "greeny" vibe
+colorscheme ron
 
 " Airline theme, needs airline and airline-themes plugins.
 let g:airline_theme='badwolf'
