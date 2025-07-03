@@ -41,7 +41,7 @@
 	# (because there is no dedicated `reflog` section available)
 	decorate = false
 [delta]
-	syntax-theme = Sublime Snazzy
+	syntax-theme = ansi
 	navigate = true
 	line-numbers = true
 	tabs = 2
