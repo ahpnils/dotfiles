@@ -55,9 +55,11 @@ if which delta > /dev/null 2>&1; then
 	DELTA_PAGER=$(which less) ; export DELTA_PAGER
 fi
 
-# Bat aliases
+# Bat aliases and configuration
 if which bat > /dev/null 2>&1; then
   alias cat='bat -pp --tabs 2'
+  export BAT_THEME="ansi"
+  export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
 # Git aliases
