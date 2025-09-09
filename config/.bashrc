@@ -114,9 +114,9 @@ fi
 
 # Autocomplete settings
 
-if which terraform > /dev/null 2>&1; then
-	complete -C /usr/bin/terraform terraform
-fi
+# if which tofu > /dev/null 2>&1; then
+# 	complete -C /usr/bin/tofu tofu
+# fi
 
 if which git > /dev/null 2>&1; then
 	git_completions="/usr/share/bash-completion/completions/git \
@@ -179,3 +179,5 @@ parse_git_branch() {
 }
 
 # vim:ts=2:sw=2:ft=bash
+
+complete -C /usr/bin/tofu tofu
