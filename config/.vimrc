@@ -22,6 +22,7 @@ autocmd FileType make set noexpandtab shiftwidth=2 tabstop=2 " No tabexpand for 
 autocmd Filetype ruby set shiftwidth=2 softtabstop=2 tabstop=2
 " autocmd BufReadPre *.nfo set encoding=cp437     " Awesome nfo viewer
 " autocmd BufNewFile,BufReadPost *.md,*.markdown,*.mdwn set spell
+" autocmd BufNewFile,BufReadPost *.md,*.markdown,*.mdwn set colorscheme=sorbet
 autocmd BufNewFile,BufReadPost *.phpt set filetype=php
 autocmd BufNewFile,BufReadPost *.rst set spell
 autocmd BufNewFile,BufReadPost *.zone set filetype=bindzone
@@ -29,7 +30,7 @@ autocmd BufnewFile,BufReadPost *.sage set filetype=python
 " Download cisco.vim from https://github.com/momota/cisco.vim/tree/master/syntax
 " and place it in your syntax folder
 " autocmd BufNewFile,BufReadPost *.cisco set filetype=cisco
-" autocmd BufNewFile,BufReadPost *.tfvars set filetype=terraform
+autocmd BufNewFile,BufReadPost *.tfvars set filetype=terraform
 
 " Highlight settings
 let hs_highlight_boolean = 1			" Highlight boolean in haskell
