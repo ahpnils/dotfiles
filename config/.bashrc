@@ -20,6 +20,7 @@ fi
 
 # Custom aliases and associated configurations.
 alias c='clear'
+alias u='uptime'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
