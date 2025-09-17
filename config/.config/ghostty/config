@@ -9,7 +9,7 @@
 #theme = ENCOM
 #theme = Firefly Traditional
 #theme = HaX0R_GR33N
-theme = Homebrew
+#theme = Homebrew
 #theme = Hurtado
 #theme = iTerm2 Dark Background
 #theme = iTerm2 Default
@@ -19,7 +19,7 @@ theme = Homebrew
 #theme = Symfonic
 #theme = synthwave
 #theme = VibrantInk
-#theme = Wez
+theme = Wez
 
 font-size = 8.5
 font-family = "NotoMono Nerd Font Mono"
