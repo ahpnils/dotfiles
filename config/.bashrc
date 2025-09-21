@@ -42,7 +42,12 @@ fi
 alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
 
 # Filter out tmp and dev filesystems, names differ from an OS to another.
-alias df='df -h -x tmpfs -x devtmpfs -x efivarfs -x devfs'
+# On NetBSD, df does not support -x, so resorting to gdf from the coreutils package.
+if which gdf > /dev/null 2>&1; then
+  alias df='gdf -h -x tmpfs -x devtmpfs -x efivarfs -x devfs'
+else
+  alias df='df -h -x tmpfs -x devtmpfs -x efivarfs -x devfs'
+fi
 
 # Vim aliases
 if which vim > /dev/null 2>&1; then

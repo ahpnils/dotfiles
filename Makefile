@@ -36,7 +36,7 @@ pkgin-deps: ## Install deps, on NetBSD systems
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
-		eza bash-completion tree xz fzf stow
+		eza bash-completion tree xz fzf stow coreutils
 
 starship-stow: ## Apply Starship configuration
 	stow -v -t ${HOME} --dotfiles starship
