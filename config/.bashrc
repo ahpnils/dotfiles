@@ -144,6 +144,10 @@ export HISTTIMEFORMAT="%y/%m/%d %T "
 # Unlimited Bash history :
 export HISTSIZE=-1
 export HISTFILESIZE=-1
+# avoid comments in Bash history
+# XXX: try ignoreboth:erasedups, check if it
+# causes issues with fzf
+export HISTCONTROL=ignoreboth
 
 # More places to exec programs
 home_paths="${HOME}/.local/bin ${HOME}/bin ${HOME}/.bin"
