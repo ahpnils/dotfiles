@@ -169,8 +169,16 @@ if [ -L "${HOME}"/.starship.toml ]; then
 	eval "$(starship init bash)"
 fi
 
+# Fuzzy Finder
 if which fzf > /dev/null 2>&1; then
 	eval "$(fzf --bash)"
+fi
+
+# Zoxide
+if which zoxide > /dev/null 2>&1; then
+	eval "$(zoxide init bash)"
+  export _ZO_DOCTOR=0
+  alias cd="z"
 fi
 
 # Custom functions

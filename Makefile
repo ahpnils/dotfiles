@@ -21,8 +21,9 @@ vim-deps: ## Install vim plugins
 rpm-deps: ## Install deps, on RH-based systems
 	sudo dnf -y install dnf-plugins-core
 	sudo dnf -y copr enable atim/starship
+	# Eza is not available on Fedora anymore
 	sudo dnf -y install ccze vim-enhanced most htop git-core git-delta bat \
-		ShellCheck eza tree fzf starship stow
+		ShellCheck tree fzf starship stow zoxide
 
 deb-deps: ## Install deps, on DEB-based systems
 	curl -sS https://starship.rs/install.sh | sh -s -- "-f"
@@ -36,7 +37,7 @@ pkgin-deps: ## Install deps, on NetBSD systems
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
 	sudo pkgin -y install vim most htop git-base git-delta bat \
-		eza bash-completion tree xz fzf stow coreutils
+		eza bash-completion tree xz fzf stow coreutils zoxide
 
 starship-stow: ## Apply Starship configuration
 	stow -v -t ${HOME} --dotfiles starship
