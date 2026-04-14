@@ -1,0 +1,12 @@
+---
+check:
+  image: docker.io/ubuntu:24.04
+  stage: test
+  script:
+    - apt-get -qq -y update
+    - DEBIAN_FRONTEND=nonineractive apt -qq -y install make sudo
+    - make deb-deps
+    - make vim-deps
+    - make check
+    - make stow
+    - make test-stow
