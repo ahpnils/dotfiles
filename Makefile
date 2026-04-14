@@ -28,7 +28,7 @@ rpm-deps: ## Install deps, on RH-based systems
 deb-deps: ## Install deps, on DEB-based systems
 	curl -sS https://starship.rs/install.sh | sh -s -- "-f"
 	sudo apt-get -y update && \
-		sudo apt-get -y install ccze vim most htop git-delta bat \
+		sudo apt-get -y install ccze vim most htop git git-delta bat \
 		shellcheck eza tree fzf stow
 
 pkgin-deps: ## Install deps, on NetBSD systems
