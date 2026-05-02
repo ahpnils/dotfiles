@@ -19,11 +19,18 @@ vim-deps: ## Install vim plugins
 	git -C ~/.vim/pack/plugins/start/vim-airline-themes pull -r || git clone https://github.com/vim-airline/vim-airline-themes.git ~/.vim/pack/plugins/start/vim-airline-themes
 
 rpm-deps: ## Install deps, on RH-based systems
-	sudo dnf -y install dnf-plugins-core
-	sudo dnf -y copr enable atim/starship
 	# Eza is not available on Fedora anymore
-	sudo dnf -y install ccze vim-enhanced most htop git-core git-delta bat \
-		ShellCheck tree fzf starship stow zoxide
+	sudo dnf -y install bat vim-enhanced btop htop git-core \
+		tree stow
+
+rpm-deps-workstation: ## Install deps, on RH-based workstations
+	sudo dnf -y install dnf-plugins-core
+	sudo dnf -y copr enable lihaohong/forgejo-cli
+	sudo dnf -y copr enable lihaohong/yazi
+	sudo dnf -y copr enable scottames/ghostty
+	sudo dnf -y copr enable atim/starship
+	sudo dnf -y install most git-delta tree fzf zoxide \
+		ShellCheck starship forgejo-cli ghostty yazi
 
 deb-deps: ## Install deps, on DEB-based systems
 	curl -sS https://starship.rs/install.sh | sh -s -- "-f"
