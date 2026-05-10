@@ -51,8 +51,8 @@ starship-stow: ## Apply Starship configuration
 
 stow: ## Apply all the other config files
 	# clean-up before first install
-	if [ -f ${HOME}/.bashrc ]; then rm -vf ${HOME}/.bashrc; fi
-	if [ -f ${HOME}/.bash_profile ]; then rm -vf ${HOME}/.bash_profile; fi
+	if [ -f ${HOME}/.bashrc ]; then mv -f ${HOME}/.bashrc ${HOME}/.bashrc.old ; fi
+	if [ -f ${HOME}/.bash_profile ]; then mv -f ${HOME}/.bash_profile ${HOME}/.bash_profile.old ; fi
 	stow -v -t ${HOME} --dotfiles config
 
 test-stow: ## Test Stow config
