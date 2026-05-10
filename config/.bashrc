@@ -33,7 +33,7 @@ alias zfgrep='zfgrep --color=auto'
 alias zegrep='zegrep --color=auto'
 
 # on NetBSD and macOS, you need xz to get the grep variants.
-if which xz > /dev/null 2>&1; then
+if command -v xz > /dev/null 2>&1; then
   alias xzgrep='xzgrep --color=auto'
   alias xzegrep='xzegrep --color=auto'
   alias xzfgrep='xzfgrep --color=auto'
@@ -44,38 +44,38 @@ alias nocom='grep -E -v '\''^[[:space:]]*(#|$)'\'''
 
 # Filter out tmp and dev filesystems, names differ from an OS to another.
 # On NetBSD, df does not support -x, so resorting to gdf from the coreutils package.
-if which gdf > /dev/null 2>&1; then
+if command -v gdf > /dev/null 2>&1; then
   alias df='gdf -h -x tmpfs -x devtmpfs -x efivarfs -x devfs -x ptyfs'
 else
   alias df='df -h -x tmpfs -x devtmpfs -x efivarfs -x devfs -x ptyfs'
 fi
 
 # Vim aliases
-if which vim > /dev/null 2>&1; then
+if command -v vim > /dev/null 2>&1; then
 	alias v='vim -p'
 	alias vi='vim -p'
-	EDITOR=$(which vim); export EDITOR
+	EDITOR=$(command -v vim); export EDITOR
 fi
 
 # Most is a somewhat better pager
-if which most > /dev/null 2>&1; then
-	PAGER=$(which most); export PAGER
+if command -v most > /dev/null 2>&1; then
+	PAGER=$(command -v most); export PAGER
 fi
 
 # Delta is an awesome pager for git
-if which delta > /dev/null 2>&1; then
-	DELTA_PAGER=$(which less) ; export DELTA_PAGER
+if command -v delta > /dev/null 2>&1; then
+	DELTA_PAGER=$(command -v less) ; export DELTA_PAGER
 fi
 
 # Bat aliases and configuration
-if which bat > /dev/null 2>&1; then
+if command -v bat > /dev/null 2>&1; then
   alias cat='bat -pp --tabs 2'
   export BAT_THEME="ansi"
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
 # Git aliases
-if which git > /dev/null 2>&1; then
+if command -v git > /dev/null 2>&1; then
 	alias g='git'
 	alias gps="git push"
 	alias gpl="git pull -r"
@@ -84,7 +84,7 @@ if which git > /dev/null 2>&1; then
 fi
 
 # Github aliases
-if which gh > /dev/null 2>&1; then
+if command -v gh > /dev/null 2>&1; then
 	alias prv="gh pr view --web"
 	alias prc="gh pr create --fill"
 	alias prd="gh pr create --fill --draft"
@@ -92,7 +92,7 @@ if which gh > /dev/null 2>&1; then
 fi
 
 # Eza aliases
-if which eza > /dev/null 2>&1; then
+if command -v eza > /dev/null 2>&1; then
   alias ll='eza -G -l --color=always'
   alias ls='eza -G -l --color=always'
   alias l='eza --color=always'
@@ -105,27 +105,27 @@ else
 fi
 
 # RPM aliases
-if which rpm > /dev/null 2>&1; then
+if command -v rpm > /dev/null 2>&1; then
   alias rpmqd='rpm -qd'
 fi
 
 # Shellcheck aliases
-if which shellcheck > /dev/null 2>&1; then
+if command -v shellcheck > /dev/null 2>&1; then
   alias shellcheck='shellcheck -x'
 fi
 
 # Tree aliases
-if which tree > /dev/null 2>&1; then
+if command -v tree > /dev/null 2>&1; then
   alias tree='tree -a -C -I .git'
 fi
 
 # Autocomplete settings
 
-# if which tofu > /dev/null 2>&1; then
+# if command -v tofu > /dev/null 2>&1; then
 # 	complete -C /usr/bin/tofu tofu
 # fi
 
-if which git > /dev/null 2>&1; then
+if command -v git > /dev/null 2>&1; then
 	git_completions="/usr/share/bash-completion/completions/git \
 		/usr/pkg/share/bash-completion/completions/git \
 		/opt/pkg/share/bash-completion/completions/git \
@@ -175,12 +175,12 @@ if [ -L "${HOME}"/.starship.toml ]; then
 fi
 
 # Fuzzy Finder
-if which fzf > /dev/null 2>&1; then
+if command -v fzf > /dev/null 2>&1; then
 	eval "$(fzf --bash)"
 fi
 
 # Zoxide
-if which zoxide > /dev/null 2>&1; then
+if command -v zoxide > /dev/null 2>&1; then
 	eval "$(zoxide init bash)"
   export _ZO_DOCTOR=0
   alias cd="z"
