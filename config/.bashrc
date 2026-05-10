@@ -197,7 +197,7 @@ fullup() { flatup && dnfup; }
 fullupandreboot() { fullup && sudo reboot; }
 fullupandhalt() { fullup && sudo poweroff; }
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  echo "($(git rev-parse --abbrev-ref HEAD))"
 }
 
 # vim:ts=2:sw=2:ft=bash
