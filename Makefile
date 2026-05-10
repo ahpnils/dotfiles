@@ -33,10 +33,10 @@ rpm-deps-workstation: ## Install deps, on RH-based workstations
 		ShellCheck starship forgejo-cli ghostty yazi
 
 deb-deps: ## Install deps, on DEB-based systems
-	curl -sS https://starship.rs/install.sh | sh -s -- "-f"
+	# starship is available in the repository starting Debian 13 and Ubuntu 26.04
 	sudo apt-get -y update && \
 		sudo apt-get -y install ccze vim most htop git git-delta bat \
-		shellcheck eza tree fzf stow
+		shellcheck eza tree fzf stow starship
 
 pkgin-deps: ## Install deps, on NetBSD systems
 	# the following softwares are not available at the moment :
