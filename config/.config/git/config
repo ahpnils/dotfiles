@@ -1,7 +1,5 @@
 [include]
 	path = ~/.config/git-local/gitconfig
-[user]
-	name = Nils Ratusznik
 [push]
 	default = simple
 	autoSetupRemote = yes
