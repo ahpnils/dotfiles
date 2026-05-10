@@ -141,13 +141,17 @@ fi
 
 # Add dates in bash_history :
 export HISTTIMEFORMAT="%y/%m/%d %T "
-# Unlimited Bash history :
-export HISTSIZE=-1
-export HISTFILESIZE=-1
+# Increase Bash history, no need 
+# to set HISTFILESIZE since disk space is not
+# an issue.
+export HISTSIZE="100000"
 # avoid comments in Bash history
 # XXX: try ignoreboth:erasedups, check if it
 # causes issues with fzf
 export HISTCONTROL=ignoreboth
+# Let's append commands to history instead of 
+# rewriting history file
+shopt -s histappend
 
 # More places to exec programs
 home_paths="${HOME}/.local/bin ${HOME}/bin ${HOME}/.bin"
