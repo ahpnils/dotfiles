@@ -28,13 +28,13 @@ rpm-deps-workstation: ## Install deps, on RH-based workstations
 	sudo dnf -y copr enable lihaohong/yazi
 	sudo dnf -y copr enable scottames/ghostty
 	sudo dnf -y copr enable atim/starship
-	sudo dnf -y install eza most git-delta tree fzf zoxide \
+	sudo dnf -y install eza git-delta tree fzf zoxide \
 		ShellCheck starship forgejo-cli ghostty yazi
 
 deb-deps: ## Install deps, on DEB-based systems
 	# starship is available in the repository starting Debian 13 and Ubuntu 26.04
 	sudo apt-get -y update && \
-		sudo apt-get -y install ccze vim most htop git git-delta bat \
+		sudo apt-get -y install ccze vim htop git git-delta bat \
 		shellcheck eza tree fzf stow starship
 
 pkgin-deps: ## Install deps, on NetBSD systems
@@ -42,7 +42,7 @@ pkgin-deps: ## Install deps, on NetBSD systems
 	# ccze, shellcheck
 	# on macOS, vim and git are available out of the box, 
 	# but sometimes in older releases
-	sudo pkgin -y install vim most htop git-base git-delta bat \
+	sudo pkgin -y install vim htop git-base git-delta bat \
 		eza bash-completion tree xz fzf stow coreutils zoxide
 
 starship-stow: ## Apply Starship configuration
