@@ -121,18 +121,21 @@ fi
 # 	complete -C /usr/bin/tofu tofu
 # fi
 
-if command -v git > /dev/null 2>&1; then
-	git_completions="/usr/share/bash-completion/completions/git \
-		/usr/pkg/share/bash-completion/completions/git \
-		/opt/pkg/share/bash-completion/completions/git \
-		/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
-	for git_completion in ${git_completions}; do
-		if [ -r "${git_completion}" ]; then
-			# shellcheck source=/dev/null
-			source "${git_completion}" && __git_complete g git
-		fi
-	done
-fi
+_lazy_git_completion() {
+  # Find and source the first available completion file
+  for path in /usr/share/bash-completion/completions/git /usr/pkg/share/bash-completion/completions/git /opt/pkg/share/bash-completion/completions/git /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash; do
+    if [ -r "$path" ]; then
+    # shellcheck source=/dev/null
+    source "$path"
+    break
+  fi
+  done
+  # Re-register the actual completion function (usually __git_wrap__git_main)
+  # and trigger it for the current interaction
+  __git_complete g git
+  unset -f _lazy_git_completion
+}
+complete -F _lazy_git_completion g git
 
 # User specific environment and startup programs
 
@@ -170,6 +173,7 @@ if [ -L "${HOME}"/.starship.toml ]; then
 	if [ ! -f ~/.cache/starship_init.sh ]; then
     starship init bash > ~/.cache/starship_init.sh
   fi
+  # shellcheck disable=1090
   source ~/.cache/starship_init.sh
 fi
 
@@ -178,6 +182,7 @@ if command -v fzf > /dev/null 2>&1; then
 	if [ ! -f ~/.cache/fzf_init.sh ]; then
     fzf --bash > ~/.cache/fzf_init.sh
   fi
+  # shellcheck disable=1090
   source ~/.cache/fzf_init.sh
 fi
 
@@ -186,6 +191,7 @@ if command -v zoxide > /dev/null 2>&1; then
 	if [ ! -f ~/.cache/zoxide_init.sh ]; then
     zoxide init bash > ~/.cache/zoxide_init.sh
   fi
+  # shellcheck disable=1090
   source ~/.cache/zoxide_init.sh
   export _ZO_DOCTOR=0
   alias cd="z"
