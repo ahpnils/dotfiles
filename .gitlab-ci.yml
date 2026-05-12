@@ -17,7 +17,7 @@ include:
 - template: Security/Secret-Detection.gitlab-ci.yml
 
 check:
-  image: docker.io/ubuntu:24.04
+  image: docker.io/ubuntu:26.04
   stage: test
   script:
     - apt-get -qq -y update
