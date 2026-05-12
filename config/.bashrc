@@ -167,17 +167,26 @@ fi
 
 if [ -L "${HOME}"/.starship.toml ]; then
 	export STARSHIP_CONFIG=${HOME}/.starship.toml
-	eval "$(starship init bash)"
+	if [ ! -f ~/.cache/starship_init.sh ]; then
+    starship init bash > ~/.cache/starship_init.sh
+  fi
+  source ~/.cache/starship_init.sh
 fi
 
 # Fuzzy Finder
 if command -v fzf > /dev/null 2>&1; then
-	eval "$(fzf --bash)"
+	if [ ! -f ~/.cache/fzf_init.sh ]; then
+    fzf --bash > ~/.cache/fzf_init.sh
+  fi
+  source ~/.cache/fzf_init.sh
 fi
 
 # Zoxide
 if command -v zoxide > /dev/null 2>&1; then
-	eval "$(zoxide init bash)"
+	if [ ! -f ~/.cache/zoxide_init.sh ]; then
+    zoxide init bash > ~/.cache/zoxide_init.sh
+  fi
+  source ~/.cache/zoxide_init.sh
   export _ZO_DOCTOR=0
   alias cd="z"
 fi
