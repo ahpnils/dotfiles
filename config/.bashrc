@@ -13,6 +13,12 @@ if [ -r ~/.bashrc.local ]; then
   source ~/.bashrc.local
 fi
 
+# Source secrets env vars
+if [ -r ~/.bashrc.secrets ]; then
+	# shellcheck source=/dev/null
+  source ~/.bashrc.secrets
+fi
+
 # User specific aliases and functions
 if [ "${TILIX_ID}" ] || [ "${VTE_VERSION}" ]; then
 	# shellcheck source=/dev/null

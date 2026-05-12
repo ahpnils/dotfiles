@@ -4,6 +4,10 @@
 *.swp
 .*.swp
 
+# Those files are availble in another repo or are forbidden because they might contain secrets :
+config/.bashrc.local
+config/.bashrc.secrets
+
 # No backup file of any sort :
 *.bak
 *.save
