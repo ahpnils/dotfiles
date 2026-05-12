@@ -100,11 +100,6 @@ else
   alias l.='ls -d .* --color=auto'
 fi
 
-# RPM aliases
-if command -v rpm > /dev/null 2>&1; then
-  alias rpmqd='rpm -qd'
-fi
-
 # Shellcheck aliases
 if command -v shellcheck > /dev/null 2>&1; then
   alias shellcheck='shellcheck -x'
