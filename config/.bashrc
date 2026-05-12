@@ -54,19 +54,19 @@ fi
 if command -v vim > /dev/null 2>&1; then
 	alias v='vim -p'
 	alias vi='vim -p'
-	export EDITOR=$(command -v vim)
+	EDITOR=$(command -v vim); export EDITOR
 fi
 
 # Delta is an awesome pager for git
 if command -v delta > /dev/null 2>&1; then
-	export DELTA_PAGER=$(command -v less)
+	DELTA_PAGER=$(command -v less) ; export DELTA_PAGER
 fi
 
 # Bat aliases and configuration
 if command -v bat > /dev/null 2>&1; then
   alias cat='bat -pp --tabs 2'
   export BAT_THEME="ansi"
-	export PAGER=$(command -v bat)
+	PAGER=$(command -v bat); export PAGER
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
